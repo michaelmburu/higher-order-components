@@ -4,7 +4,7 @@ import { UserInfoForm } from './UserInfoForm';
 import { withUser } from './WithUser';
 
 
-// Modifying data with higher order components
+// Impoving the higher order component into a reuseable resource component that works with users, products etc
 const UserInfoWithLoader = withUser(UserInfo, '234')
 
 function App() {

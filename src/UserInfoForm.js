@@ -1,6 +1,9 @@
+import { withEditableResource } from "./withEditableResource";
 import { withEditableUser } from "./withEditableUser";
 
-export const UserInfoForm = withEditableUser(({user, onChangeUser, onSaveUser, onResetUser}) => {
+
+// Expanding the withEditableUser high order component
+export const UserInfoForm = withEditableResource(({user, onChangeUser, onSaveUser, onResetUser}) => {
     const {name, age, hairColor} = user || {};
 
     return user ? (
@@ -23,4 +26,4 @@ export const UserInfoForm = withEditableUser(({user, onChangeUser, onSaveUser, o
           
         </>
     ) : <p>Loading.....</p>
-}, '123')
+}, '/users/123', 'user')
