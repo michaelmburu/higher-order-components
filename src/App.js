@@ -1,15 +1,15 @@
 import './App.css';
-import { printProps } from './printProps';
 import { UserInfo } from './UserInfo';
+import { withUser } from './WithUser';
 
-// High order component
 
-const UserInfoWrapped = printProps(UserInfo);
+// Loading data with higher order components
+const UserInfoWithLoader = withUser(UserInfo, '234')
 
 function App() {
   return (
     <>
-      <UserInfoWrapped a={1} b="Hello" c={{name: 'Shaun'}} />
+        <UserInfoWithLoader />
     </>
   );
 }
